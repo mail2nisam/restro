@@ -1,0 +1,6 @@
+.vscode
+react/node_modules
+backend/node_modules
+react/.parcel-cache
+react/dist
+react/.vscode

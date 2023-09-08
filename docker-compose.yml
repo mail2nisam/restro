@@ -1,0 +1,57 @@
+services:
+  react:
+    container_name: react
+    build:
+      context: react
+    ports:
+      - '4000:1234' # Map your local port to the container's port
+    volumes:
+      - ./react:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development # Set the NODE_ENV environment variable
+    stdin_open: true
+    tty: true
+#   frontend:
+#     build:
+#       context: frontend
+#       target: development
+#     ports:
+#       - 3000:3000
+#     stdin_open: true
+#     volumes:
+#       - ./frontend:/usr/src/app
+#       - /usr/src/app/node_modules
+#     restart: always
+#     networks:
+#       - react-express
+#     depends_on:
+#       - backend
+
+#   backend:
+#     restart: always
+#     build:
+#       context: backend
+#       target: development
+#     volumes:
+#       - ./backend:/usr/src/app
+#       - /usr/src/app/node_modules
+#     depends_on:
+#       - mongo
+#     networks:
+#       - express-mongo
+#       - react-express
+#     expose:
+#       - 3000
+#   mongo:
+#     restart: always
+#     image: mongo:4.2.0
+#     volumes:
+#       - ./data:/data/db
+#     networks:
+#       - express-mongo
+#     expose:
+#       - 27017
+# networks:
+#   react-express:
+#   express-mongo:

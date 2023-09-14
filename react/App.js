@@ -6,6 +6,7 @@ import Error from "./src/components/Error";
 import Body from "./src/components/Body";
 import Home from "./src/components/Home";
 import Sample from "./src/components/Sample";
+import FileUpload from "./src/components/FileUpload";
 
 const appRouter = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/sample",
                 element: <Sample/>
+            },
+            {
+                path: "/upload",
+                element: <FileUpload/>
             }
         ],
         errorElement: <Error/>

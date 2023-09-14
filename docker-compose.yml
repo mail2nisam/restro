@@ -28,14 +28,16 @@ services:
 #     depends_on:
 #       - backend
 
-#   backend:
-#     restart: always
-#     build:
-#       context: backend
-#       target: development
-#     volumes:
-#       - ./backend:/usr/src/app
-#       - /usr/src/app/node_modules
+  backend:
+    restart: always
+    build:
+      context: backend
+      target: development
+    ports:
+      - 3001:3001
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
 #     depends_on:
 #       - mongo
 #     networks:
